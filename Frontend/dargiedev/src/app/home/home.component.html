@@ -3,7 +3,7 @@
 <header class="l-header">
     <nav class="nav bd-grid">
         <div>
-            <a href="#" class="nav__logo">Dargie Dev</a>
+            <a href="#" class="nav__logo" [ngsReveal]="{reset: false, distance: '10px', duration: 1000, delay: 100}">dargiedev //</a>
         </div>
 
         <div class="nav__toggle" id="nav-toggle">
@@ -17,10 +17,10 @@
 
             <ul class="nav__list">
                 <!-- <li class="nav__item"><a href="#" class="nav__link">Home</a></li> -->
-                <li class="nav__item"><a href="#" class="nav__link">ABOUT</a></li>
-                <li class="nav__item"><a href="#" class="nav__link">DEV</a></li>
-                <li class="nav__item"><a href="#" class="nav__link">BLOG</a></li>
-                <li class="nav__item"><a href="#" class="nav__link">CONTACT</a></li>
+                <li class="nav__item" [ngsReveal]="{reset: false, origin: 'top', distance: '10px', duration: 1500, delay: 200}"><a href="#" class="nav__link">about</a></li>
+                <li class="nav__item" [ngsReveal]="{reset: false, origin: 'top', distance: '10px', duration: 1500, delay: 300}"><a href="#" class="nav__link">work</a></li>
+                <li class="nav__item" [ngsReveal]="{reset: false, origin: 'top', distance: '10px', duration: 1500, delay: 400}"><a href="#" class="nav__link">blog</a></li>
+                <li class="nav__item" [ngsReveal]="{reset: false, origin: 'top', distance: '10px', duration: 1500, delay: 500}"><a href="#" class="nav__link">contact</a></li>
             </ul>
 
         </div>
@@ -32,15 +32,20 @@
 <main class="l-main">
 
     <section class="home">
+        
+        <!-- <div class="home-overlay">
+
+        </div> -->
+
         <div class="home__container bd-grid">
             <div class="home__img">
 
             </div>
 
-            <div class="home__data">
-                <h1 class="home__title">Mark Dargie /</h1>
-                <h2 class="home-sub-title">Web Development</h2>
-                <h2 class="home-sub-title">Video Game Design</h2>
+            <div class="home__data" >
+                <h1 class="home__title" [ngsReveal]="{reset: false, origin: 'left', distance: '30px', duration: 1200, delay: 800}" >Mark Dargie /</h1>
+                <h2 class="home-sub-title" [ngsReveal]="{reset: false,  origin: 'left', distance: '30px', duration: 1200, delay: 1000}">Web Development.</h2>
+                <h2 class="home-sub-title" [ngsReveal]="{reset: false, origin: 'left', distance: '30px', duration: 1200, delay: 1200}">Video Game Design.</h2>
                 <!-- <p class="home_info">Web Developer. Game Developer. Virtual Reality.</p> -->
             </div>
 
@@ -48,9 +53,26 @@
     </section>
 
 
-    <section class="about">
+    <section class="about section-p">
 
         <div class="about-container">
+
+            <div class="container">
+
+                <div class="row">
+
+                    <div class="col-sm">
+
+                        <div class="heading-container" [ngsReveal]="{reset: false, origin: 'left', distance: '50px', duration: 1200, delay: 300}">
+                            <p class="title-text">/ DEVELOPMENT</p>
+                            <h3 class="title-sub-text">Experiance with modern web <br> application architectures <br> and video game technologies.</h3>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
 
         </div>
 
