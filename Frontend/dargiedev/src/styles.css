@@ -1,0 +1,241 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+:root{
+    --header-height:3rem;
+    /* colours */
+    --first-color:#FCA4A6;
+    --first-color-dark:#C1576A;
+    --first-color-darken:#A83E51;
+    --white-color:#FCF8F8;
+
+    /* Fonts and Typography*/
+    --body-font: 'Roboto', sans-serif;
+    --big-font-size: 2.5rem;
+    --big-font-size-sm: 2rem;
+    --norgmal-font-size: .9rem;
+
+    --z-fixed: 100;
+    
+}
+
+@media screen and (min-width: 768px){
+
+    :root{
+        --big-font-size: 5rem;
+        --big-font-size-sm: 4.5rem;
+        --norgmal-font-size: 1rem;
+    }
+
+}
+
+*,::before,::after{
+    box-sizing: border-box;
+}
+
+body{
+
+    margin: var(--header-height) 0 0 0;
+    padding:0;
+    font-family: var(--body-font);
+    font-size:var(--norgmal-font-size);
+    font-weight: normal;
+    scroll-behavior: smooth;
+
+}
+
+h1,h2,p,ul{
+    margin:0;
+}
+
+ul{
+    padding:0;
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* LAYOUT */
+.bd-grid{
+    max-width: 1280px;
+    display: grid;
+    grid-template-columns: 100%;
+    column-gap:2rem;
+    width:calc(100% - 2rem);
+    margin-left: 1rem;
+    margin-right:1rem;
+}
+
+.l-header{
+    width: 100%;
+    position: fixed;
+    top:0;
+    left:0;
+    z-index: var(--z-fixed);
+    background-color: var(--first-color);
+}
+
+
+/* NAV STYLING */
+.nav{
+    height:var(--header-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media screen and (max-width:768px){
+
+    .nav__menu{
+        position: fixed;
+        top:0;
+        right:-100%;
+        width: 70%;
+        height: 100%;
+        padding:3.5rem 1.5rem 0;
+        background-color: rgba(255, 255, 255, .3);
+        backdrop-filter: blur(10px);
+        transition: .5s;
+    }
+
+}
+
+.nav__close{
+    position: absolute;
+    top:.75rem;
+    right:1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.nav__item{
+    margin-bottom:2rem;
+}
+
+.nav__close, .nav__link, .nav__logo, .nav__toggle {
+    color:var(--white-color);
+}
+
+.nav__link:hover{
+    color:var(--first-color-dark);
+}
+
+.nav__toggle{
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* HOME STYLING */
+.home{
+    /* background-color: var(--first-color); */
+    background-image: url('./assets/img/home-bg.jpg');
+    background-position: center;
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    overflow: hidden;
+}
+
+.home__container{
+
+    height: calc(100vh - var(--header-height));
+    grid-template-rows:repeat(2, max-content);
+    row-gap: 1.5rem;
+
+}
+
+.home__data{
+    color:var(--white-color);
+}
+
+.home__title{
+    font-size: var(--big-font-size);
+    line-height: 1.3;
+    margin-bottom: 1rem;
+    font-weight: 100;
+}
+
+.home-sub-title{
+    font-size: var(--big-font-size-sm);
+    line-height: 1;
+    margin-bottom: 1rem;
+    font-weight: 100;
+}
+
+.home__info{
+    margin-bottom: 2.5rem;
+}
+
+/* NAV / HOME MEDIA QUERIES */
+@media screen and (min-width:768px){
+
+    body{
+        margin:0;
+    }
+
+    .nav{
+        height: calc(var(--header-height) + 1.5rem);
+    }
+
+    .nav__toggle, .nav__close{
+        display: none;
+    }
+
+    .nav__list{
+        display: flex;
+    }
+
+    .nav__item{
+        margin-left: 3rem;
+        margin-bottom: 0;
+    }
+
+    .home__container{
+        height:100vh;
+        grid-template-columns: repeat(2, max-content);
+        grid-template-rows: 1fr;
+        row-gap: 0;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+}
+
+
+@media screen and (min-width:1024px){
+
+    .bd-grid{
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .home__container{
+        justify-content: inherit;
+        column-gap: 4.5rem;
+    }
+
+    
+}
+
+
+/* about styling */
+.about{
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+
+.about-container{
+    width: 100%;
+    height:100vh;
+    background-color: black;
+}
