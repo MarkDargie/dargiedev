@@ -2,8 +2,8 @@
 
 <header class="l-header">
     <nav class="nav bd-grid">
-        <div>
-            <a href="#" class="nav__logo" [ngsReveal]="{reset: false, distance: '10px', duration: 1000, delay: 100}">dargiedev //</a>
+        <div [ngsReveal]="{reset: false, origin: 'left', distance: '20px', duration: 1000, delay: 100}" >
+            <a href="#" class="nav__logo">dargiedev //</a>
         </div>
 
         <div class="nav__toggle" id="nav-toggle">
@@ -43,10 +43,15 @@
             </div>
 
             <div class="home__data" >
-                <h1 class="home__title" [ngsReveal]="{reset: false, origin: 'left', distance: '30px', duration: 1200, delay: 800}" >Mark Dargie /</h1>
-                <h2 class="home-sub-title" [ngsReveal]="{reset: false,  origin: 'left', distance: '30px', duration: 1200, delay: 1000}">Web Development.</h2>
-                <h2 class="home-sub-title" [ngsReveal]="{reset: false, origin: 'left', distance: '30px', duration: 1200, delay: 1200}">Video Game Design.</h2>
+                <h1 class="home__title" [ngsReveal]="{reset: false, origin: 'left', distance: '30px', duration: 1500, delay: 800}" >Mark Dargie /</h1>
+                <h2 class="home-sub-title" [ngsReveal]="{reset: false,  origin: 'left', distance: '30px', duration: 1500, delay: 1000}">Web Development.</h2>
+                <h2 class="home-sub-title" [ngsReveal]="{reset: false, origin: 'left', distance: '30px', duration: 1500, delay: 1200}">Video Game Design.</h2>
                 <!-- <p class="home_info">Web Developer. Game Developer. Virtual Reality.</p> -->
+            </div>
+
+
+            <div class="home-small" [ngsReveal]="{reset: false, origin: 'bottom', distance: '30px', duration: 1500, delay: 1000}" >
+                <p class="home-small-text">// scroll</p>
             </div>
 
         </div>
