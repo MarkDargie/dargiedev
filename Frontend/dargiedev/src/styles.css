@@ -360,6 +360,7 @@ img{
     width: 100%;
     /* background-color: #A83E51; */
     /* padding:100px; */
+    cursor:grab;
 }
 
 .carousel-inner{
@@ -371,10 +372,15 @@ img{
     width:200px;
     margin-bottom: 20px;
 }
+.owl-stage {
+    right: -20%;
+}
+
+
 
 .animated  {
-    -webkit-animation-duration : 3000 ms  ;
-    animation-duration : 3000 ms  ;
+    -webkit-animation-duration : 5000 ms  ;
+    animation-duration : 5000 ms  ;
     -webkit-animation-fill-mode : both  ;
     animation-fill-mode : both  ;
   }  

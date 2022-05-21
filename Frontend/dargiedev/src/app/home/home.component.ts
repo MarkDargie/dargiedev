@@ -2,14 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import {NgsRevealConfig} from 'ngx-scrollreveal';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { HttpClient } from '@angular/common/http';
-import { throwError } from 'rxjs';
+import { of, throwError } from 'rxjs';
 
-export interface PhotosApi {
-  albumId?: number;
-  id?: number;
-  title?: string;
-  url?: string;
-  thumbnailUrl?: string;
+export interface Slide {
+
+  id: string;
+  marginL: number;
+  marginR: number,
+  center: boolean;
+  src: string;
 }
 
 @Component({
@@ -20,7 +21,8 @@ export interface PhotosApi {
 export class HomeComponent implements OnInit {
 
   apiData!: any[];
-  limit: number = 10;
+  limit: number = 4;
+  slides: Slide[] = [];
 
   customOptions: OwlOptions = {
     loop:false,
@@ -28,13 +30,14 @@ export class HomeComponent implements OnInit {
     touchDrag: true,
     pullDrag: true,
     dots: false,
-    // center: true,
-    // autoHeight: true,
-    // autoWidth: true,
-    navSpeed: 100,
-    autoplay: true,
-    autoplaySpeed: 1000,
-    navText: ['', ''],
+    //center: true,
+    autoHeight: true,
+    autoWidth: true,
+    navSpeed: 1500,
+    autoplay: false,
+    autoplaySpeed: 2000,
+    smartSpeed: 1500,
+    //stagePadding: 100,
     responsive: {
       0: {
         items: 1
@@ -47,10 +50,11 @@ export class HomeComponent implements OnInit {
       },
       940: {
         items: 2,
-        margin: 500
+        margin: 500,
+        //stagePadding: 1000
       }
     },
-    nav:true,
+    //nav:true,
   }
 
   constructor(
@@ -59,17 +63,35 @@ export class HomeComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
-    this.fetch();
+    this.genereateSlides();
+    console.log(this.slides);
   }
 
-  fetch() {
-    const api = `https://jsonplaceholder.typicode.com/albums/1/photos?_start=0&_limit=${this.limit}`;
-    const http$ = this.http.get<PhotosApi[]>(api);
+  genereateSlides(){
 
-    http$.subscribe(
-      res => this.apiData = res,
-      err => throwError(err)
-    )
+    for(let i = 1; i < this.limit; i++) {
+      if(i == 1){
+        let slide = {
+          id: i.toString(),
+          marginL: 500,
+          marginR: 250,
+          center: false,
+          src: "../../assets/img/gameimg.png", 
+        }
+        this.slides.push(slide);
+      } else{
+        let slide = {
+          id: i.toString(),
+          marginL: 250,
+          marginR: 250,
+          center: false,
+          src: "../../assets/img/gameimg.png", 
+        }
+        this.slides.push(slide);
+      }
+
+    }
+
   }
 
 }
