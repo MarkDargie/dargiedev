@@ -43,9 +43,9 @@
             </div>
 
             <div class="home__data" >
-                <h1 class="home__title" [ngsReveal]="{reset: false, origin: 'left', distance: '30px', duration: 1500, delay: 800}" >Mark Dargie /</h1>
-                <h2 class="home-sub-title" [ngsReveal]="{reset: false,  origin: 'left', distance: '30px', duration: 1500, delay: 1000}">Web Development.</h2>
-                <h2 class="home-sub-title" [ngsReveal]="{reset: false, origin: 'left', distance: '30px', duration: 1500, delay: 1200}">Video Game Design.</h2>
+                <h1 class="home__title" [ngsReveal]="{reset: false, origin: 'left', distance: '30px', duration: 1700, delay: 1000}" >Mark Dargie /</h1>
+                <h2 class="home-sub-title" [ngsReveal]="{reset: false,  origin: 'left', distance: '30px', duration: 1700, delay: 1200}">Web Development.</h2>
+                <h2 class="home-sub-title" [ngsReveal]="{reset: false, origin: 'left', distance: '30px', duration: 1700, delay: 1400}">Video Game Design.</h2>
                 <!-- <p class="home_info">Web Developer. Game Developer. Virtual Reality.</p> -->
             </div>
 
@@ -77,8 +77,60 @@
 
                 </div>
 
+                <div class="row">
+
+                        <div class="game-image-container">
+                            <img src="../../assets/img/gameimg.png" class="game-image" [ngsReveal]="{reset: false, origin: 'left', distance: '100px', duration: 1200, delay: 800}">
+                            <div class="game-text-container">
+                                <p class="title-text">// JUSTWANNADANCE</p>
+                                <h3 class="game-sub-text">Retro style shooter developed with Unity. Fight off hordes of zombies in this playstation era inspired grunge FPS. <br>
+                                </h3>
+                            </div>
+                        </div>
+                        
+                </div>
+
             </div>
 
+        </div>
+
+    </section>
+
+    <section class="carousel">
+        <div class="container-fluid">
+            
+
+            <div class="carousel-container">
+                <owl-carousel-o [options]="customOptions">
+
+                    <ng-template class="item first" carouselSlide>
+                        <div class="carousel-inner first-item">
+                            <img src="../../assets/img/gameimg.png" class="carousel-image">
+                            <div class="">
+                                <p class="title-text">// JUSTWANNADANCE</p>
+                                <h3 class="game-sub-text">Retro style shooter developed with Unity. Fight off hordes of zombies in this playstation era inspired grunge FPS. <br>
+                                </h3>
+                            </div>
+                        </div>
+                    </ng-template>
+                    <ng-template class="item" carouselSlide>
+                        <div class="carousel-inner">
+                            <img src="../../assets/img/gameimg.png" class="carousel-image" >
+                            <div class="">
+                                <p class="title-text">// JUSTWANNADANCE</p>
+                                <h3 class="game-sub-text">Retro style shooter developed with Unity. Fight off hordes of zombies in this playstation era inspired grunge FPS. <br>
+                                </h3>
+                            </div>
+                        </div>
+                    </ng-template>
+                    <!-- <ng-container *ngFor="let slide of apiData">
+                      <ng-template class="slide" carouselSlide [id]="slide.id">
+                        <img [src]="slide.url" [alt]="slide.id" [title]="slide.id">
+                      </ng-template>
+                    </ng-container> -->
+                
+                  </owl-carousel-o> 
+            </div>
         </div>
 
     </section>
