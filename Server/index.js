@@ -4,6 +4,9 @@ const port = 3000;
 const cors = require('cors');
 const database = require('./Database/database');
 
+app.use(cors());
+app.use(express.urlencoded({extended: true}));
+
 // import and use routes
 app.use(require('./Routes'));
 

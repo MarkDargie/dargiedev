@@ -6,7 +6,7 @@ router.get('/test', async (req, res) => {
         await database.getObjects().then(results=>{
             console.log(results);
             if(!results) res.status(400);
-            res.send(results);
+            res.send(results.recordset);
         });
     }
     catch(error){

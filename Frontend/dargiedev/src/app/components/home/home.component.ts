@@ -3,6 +3,9 @@ import {NgsRevealConfig} from 'ngx-scrollreveal';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { HttpClient } from '@angular/common/http';
 import { of, throwError } from 'rxjs';
+import { DataService } from 'src/app/services/data.service';
+import { Test } from 'src/app/models/test.model';
+import { catchError, tap } from 'rxjs/operators';
 
 export interface Slide {
 
@@ -23,6 +26,7 @@ export class HomeComponent implements OnInit {
   apiData!: any[];
   limit: number = 4;
   slides: Slide[] = [];
+  tests!: Test[];
 
   customOptions: OwlOptions = {
     loop:false,
@@ -59,12 +63,21 @@ export class HomeComponent implements OnInit {
 
   constructor(
     private reveal: NgsRevealConfig,
-    private http: HttpClient
+    private http: HttpClient,
+    private dataService: DataService
     ) { }
 
   ngOnInit(): void {
-    this.genereateSlides();
-    console.log(this.slides);
+
+    this.dataService.getTestData().pipe(
+      tap((results)=>{
+        this.tests = results;
+        console.log(results);
+      }),catchError((error)=>{
+        console.log(error);
+        return of(false);
+      })
+    ).subscribe();
   }
 
   genereateSlides(){
@@ -95,3 +108,4 @@ export class HomeComponent implements OnInit {
   }
 
 }
+
