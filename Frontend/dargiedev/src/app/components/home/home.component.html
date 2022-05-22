@@ -68,7 +68,7 @@
 
                     <div class="col-sm">
 
-                        <div class="heading-container" [ngsReveal]="{reset: false, origin: 'left', distance: '50px', duration: 1200, delay: 300}">
+                        <div class="heading-container" [ngsReveal]="{reset: false, origin: 'left', distance: '100px', duration: 1400, delay: 200}">
                             <p class="title-text">/ DEVELOPMENT</p>
                             <h3 class="title-sub-text">Experiance with modern web <br> application architectures <br> and video game technologies.</h3>
                         </div>
@@ -98,12 +98,11 @@
 
     <section class="carousel">
         <div class="container-fluid">
-            
 
             <div class="carousel-container">
-                <owl-carousel-o [options]="customOptions">
+                <owl-carousel-o [options]="customOptions" [ngsReveal]="{reset: false, origin: 'right', distance: '200px', duration: 1200, delay: 500}">
 
-                    <ng-template class="item first" carouselSlide>
+                    <ng-template class="item first" carouselSlide >
                         <div class="carousel-inner first-item">
                             <img src="../../assets/img/gameimg.png" class="carousel-image">
                             <div class="">
@@ -153,6 +152,18 @@
             </div>
         </div>
 
+    </section>
+
+    <section class="about-second section-p white">
+        <div class="about-container-second">
+            <div class="container">
+                <div class="col">
+                    <div class="row">
+
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
 

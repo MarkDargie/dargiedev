@@ -15,6 +15,7 @@ var config = {
     }
 };
 
+// get all carousel data
 const getCarouselItems = async() => {
     try{
         console.log("Connecting");
@@ -29,7 +30,22 @@ const getCarouselItems = async() => {
     }
 }
 
+// get all blog post data
+const getBlogPosts = async() => {
+    try{
+        console.log("Connecting");
+        let pool = await sql.connect(config);
+        let results = pool.request().query("select * FROM [dbo].[BlogPost] WHERE OutOfUse != 1");
+        console.log(results);
+        return results;
+    }
+    catch(error){
+        console.log("Error",  error);
+        return null;
+    }
+}
 
+// testing db call
 const getObjects = async() => {
     try{
         console.log("Connecting");
@@ -44,6 +60,7 @@ const getObjects = async() => {
     }
 }
 
+
 module.exports = {
-    getObjects, getCarouselItems
+    getObjects, getCarouselItems, getBlogPosts
 }
