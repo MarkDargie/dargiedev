@@ -6,7 +6,6 @@ import { of, throwError } from 'rxjs';
 import { DataService } from 'src/app/services/data.service';
 import { Test } from 'src/app/models/test.model';
 import { catchError, tap } from 'rxjs/operators';
-
 export interface Slide {
 
   id: string;
@@ -59,6 +58,14 @@ export class HomeComponent implements OnInit {
       }
     },
     //nav:true,
+  }
+
+  revealOptions = {
+    reset: false, 
+    origin: 'bottom', 
+    distance: '100px', 
+    duration: 1400, 
+    delay: 300,
   }
 
   constructor(
