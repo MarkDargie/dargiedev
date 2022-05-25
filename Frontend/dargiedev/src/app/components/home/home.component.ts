@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import {NgsRevealConfig} from 'ngx-scrollreveal';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { HttpClient } from '@angular/common/http';
@@ -6,26 +6,34 @@ import { of, throwError } from 'rxjs';
 import { DataService } from 'src/app/services/data.service';
 import { Test } from 'src/app/models/test.model';
 import { catchError, tap } from 'rxjs/operators';
-export interface Slide {
-
-  id: string;
-  marginL: number;
-  marginR: number,
-  center: boolean;
-  src: string;
-}
+import {
+  trigger,
+  state,
+  style,
+  animate,
+  transition,
+  // ...
+} from '@angular/animations';
+import {test, imageTextLeft, developmentTextLeft, iconsFromBottom} from './home-animations';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
+  animations:[
+    test.animeTrigger, imageTextLeft.animeTrigger,
+    developmentTextLeft.animeTrigger, iconsFromBottom.firstIcon,
+    iconsFromBottom.secondIcon, iconsFromBottom.thirdIcon, iconsFromBottom.fourthIcon, iconsFromBottom.fifthIcon
+  ],
 })
+
 export class HomeComponent implements OnInit {
 
   apiData!: any[];
   limit: number = 4;
-  slides: Slide[] = [];
   tests!: Test[];
+  isOpen = true;
+  fadeInLeft = true;
 
   customOptions: OwlOptions = {
     loop:false,
@@ -75,44 +83,16 @@ export class HomeComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
-
-    this.dataService.getTestData().pipe(
-      tap((results)=>{
-        this.tests = results;
-        console.log(results);
-      }),catchError((error)=>{
-        console.log(error);
-        return of(false);
-      })
-    ).subscribe();
   }
 
-  genereateSlides(){
-
-    for(let i = 1; i < this.limit; i++) {
-      if(i == 1){
-        let slide = {
-          id: i.toString(),
-          marginL: 500,
-          marginR: 250,
-          center: false,
-          src: "../../assets/img/gameimg.png", 
-        }
-        this.slides.push(slide);
-      } else{
-        let slide = {
-          id: i.toString(),
-          marginL: 250,
-          marginR: 250,
-          center: false,
-          src: "../../assets/img/gameimg.png", 
-        }
-        this.slides.push(slide);
-      }
-
-    }
-
+  @HostListener("window:scroll", ["$event"])
+  onWindowScroll(){
+    console.log("tracking mouse position", window.pageYOffset );
+    
   }
+
+
+  
 
 }
 

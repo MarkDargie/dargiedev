@@ -29,7 +29,7 @@
 </header>
 
 
-<main class="l-main">
+<main class="l-main" #main>
 
     <section class="home">
         
@@ -68,7 +68,7 @@
 
                     <div class="col-sm">
 
-                        <div class="heading-container" [ngsReveal]="{reset: false, origin: 'left', distance: '100px', duration: 1400, delay: 200}">
+                        <div class="heading-container" [@DevFadeInLeft]="fadeInLeft ? 'in' : 'in'">
                             <p class="title-text">/ DEVELOPMENT</p>
                             <h3 class="title-sub-text">Experiance with modern web <br> application architectures <br> and video game technologies.</h3>
                         </div>
@@ -160,31 +160,19 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="image-content-container">
-                        <div class="image-content-left" [ngsReveal]="{reset: false, origin: 'left', distance: '300px', viewFactor: 1, duration: 1400, delay: 400}">
+                        <div class="image-content-left" [@fadeInLeft]="fadeInLeft ? 'in' : 'in'">
                             <h3 class="title-sub-text image-text">Experiance with modern web <br> application architectures <br> and video game technologies.</h3>
                             <div class="link-image-container">
                                 <a href=""><h4 class="download-text image-text">Download On Steam</h4></a>
                                 <img src="../../../assets/img/steamicon.png" class="steam-icon">
                             </div>
                         </div>
-                        <div class="image-content-right" [ngsReveal]="{reset: false, origin: 'bottom', distance: '300px', viewFactor: 1, duration: 1400, delay: 400}">
+                        <div class="image-content-right" [@flyInOut]="isOpen ? 'in' : 'in'">
 
                         </div>
                     </div>
                 </div>
             </div>
-
-                        <!-- <h1 class="image__title" >Mark Dargie /</h1> -->
-
-
-
-            <!-- <div class="image-overlay-top">
-      
-            </div>
-
-            <div class="image-overlay-bottom">
-                
-            </div> -->
 
 
         </div>
@@ -196,11 +184,18 @@
                     <div class="inner-about-second">
                         <div class="social-links" #icons>
                         
-                            <img src="../../../assets/img/icons/github-logo.png" class="social-icon" [ngsReveal]="{reset: false, origin: 'bottom', distance: '100px', duration: 1400, delay: 300}">
-                            <img src="../../../assets/img/icons/twitch.png" class="social-icon" [ngsReveal]="{reset: false, origin: 'bottom',  distance: '100px', duration: 1400, delay: 400}">
-                            <img src="../../../assets/img/icons/instagram.png" class="social-icon" [ngsReveal]="{reset: false, origin: 'bottom',  distance: '100px', duration: 1400, delay: 500}">
-                            <img src="../../../assets/img/icons/twitter.png" class="social-icon" [ngsReveal]="{reset: false, origin: 'bottom',  distance: '100px', duration: 1400, delay: 600}">
-                            <img src="../../../assets/img/icons/youtube.png" class="social-icon" [ngsReveal]="{reset: false, origin: 'bottom',  distance: '100px', duration: 1400, delay: 700, viewOffset: {top:100;}}">
+                            <a href=""><img src="../../../assets/img/icons/github-logo.png" class="social-icon" [@iconBtmOne]="isOpen ? 'in' : 'in'" ></a>
+                            <a href=""><img src="../../../assets/img/icons/twitch.png" class="social-icon" [@iconBtmTwo]="isOpen ? 'in' : 'in'" ></a>
+                            <a href=""><img src="../../../assets/img/icons/instagram.png" class="social-icon" [@iconBtmThree]="isOpen ? 'in' : 'in'" ></a>
+                            <a href=""><img src="../../../assets/img/icons/twitter.png" class="social-icon" [@iconBtmFour]="isOpen ? 'in' : 'in'"></a>
+                            <a href=""><img src="../../../assets/img/icons/youtube.png" class="social-icon" [@iconBtmFive]="isOpen ? 'in' : 'in'"></a>
+
+<!-- 
+                            <a href=""><img src="../../../assets/img/icons/github-logo.png" class="social-icon" [ngsReveal]="{reset: false, origin: 'bottom', distance: '100px', duration: 1400, delay: 300}"></a>
+                            <a href=""><img src="../../../assets/img/icons/twitch.png" class="social-icon" [ngsReveal]="{reset: false, origin: 'bottom',  distance: '100px', duration: 1400, delay: 400}"></a>
+                            <a href=""><img src="../../../assets/img/icons/instagram.png" class="social-icon" [ngsReveal]="{reset: false, origin: 'bottom',  distance: '100px', duration: 1400, delay: 500}"></a>
+                            <a href=""><img src="../../../assets/img/icons/twitter.png" class="social-icon" [ngsReveal]="{reset: false, origin: 'bottom',  distance: '100px', duration: 1400, delay: 600}"></a>
+                            <a href=""><img src="../../../assets/img/icons/youtube.png" class="social-icon" [ngsReveal]="{reset: false, origin: 'bottom',  distance: '100px', duration: 1400, delay: 600}"></a> -->
                         </div>
                     </div>
 
@@ -212,7 +207,7 @@
         <footer class="footer">
 
             <div class="footer-overlay-top">
-            
+                <div id="box"></div>
             </div>
         </footer>
         
