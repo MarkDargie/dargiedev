@@ -2,7 +2,7 @@
 
 <header class="l-header">
     <nav class="nav bd-grid">
-        <div [ngsReveal]="{reset: false, origin: 'left', distance: '20px', duration: 1000, delay: 100}" >
+        <div [ngsReveal]="{reset: false, origin: 'left', distance: '20px', duration: 1000, delay: 100}">
             <a href="#" class="nav__logo">dargiedev //</a>
         </div>
 
@@ -17,10 +17,18 @@
 
             <ul class="nav__list">
                 <!-- <li class="nav__item"><a href="#" class="nav__link">Home</a></li> -->
-                <li class="nav__item" [ngsReveal]="{reset: false, origin: 'top', distance: '10px', duration: 1500, delay: 200}"><a href="#" class="nav__link">about</a></li>
-                <li class="nav__item" [ngsReveal]="{reset: false, origin: 'top', distance: '10px', duration: 1500, delay: 300}"><a href="#" class="nav__link">work</a></li>
-                <li class="nav__item" [ngsReveal]="{reset: false, origin: 'top', distance: '10px', duration: 1500, delay: 400}"><a href="#" class="nav__link">blog</a></li>
-                <li class="nav__item" [ngsReveal]="{reset: false, origin: 'top', distance: '10px', duration: 1500, delay: 500}"><a href="#" class="nav__link">contact</a></li>
+                <li class="nav__item"
+                    [ngsReveal]="{reset: false, origin: 'top', distance: '10px', duration: 1500, delay: 200}"><a
+                        href="#" class="nav__link">about</a></li>
+                <li class="nav__item"
+                    [ngsReveal]="{reset: false, origin: 'top', distance: '10px', duration: 1500, delay: 300}"><a
+                        href="#" class="nav__link">work</a></li>
+                <li class="nav__item"
+                    [ngsReveal]="{reset: false, origin: 'top', distance: '10px', duration: 1500, delay: 400}"><a
+                        href="#" class="nav__link">blog</a></li>
+                <li class="nav__item"
+                    [ngsReveal]="{reset: false, origin: 'top', distance: '10px', duration: 1500, delay: 500}"><a
+                        href="#" class="nav__link">contact</a></li>
             </ul>
 
         </div>
@@ -32,7 +40,7 @@
 <main class="l-main" #main>
 
     <section class="home">
-        
+
         <!-- <div class="home-overlay">
 
         </div> -->
@@ -42,15 +50,22 @@
 
             </div>
 
-            <div class="home__data" >
-                <h1 class="home__title" [ngsReveal]="{reset: false, origin: 'left', distance: '30px', duration: 1700, delay: 1000}" >Mark Dargie /</h1>
-                <h2 class="home-sub-title" [ngsReveal]="{reset: false,  origin: 'left', distance: '30px', duration: 1700, delay: 1200}">Web Development.</h2>
-                <h2 class="home-sub-title" [ngsReveal]="{reset: false, origin: 'left', distance: '30px', duration: 1700, delay: 1400}">Video Game Design.</h2>
+            <div class="home__data">
+                <h1 class="home__title"
+                    [ngsReveal]="{reset: false, origin: 'left', distance: '30px', duration: 1700, delay: 1000}">Mark
+                    Dargie /</h1>
+                <h2 class="home-sub-title"
+                    [ngsReveal]="{reset: false,  origin: 'left', distance: '30px', duration: 1700, delay: 1200}">Web
+                    Development.</h2>
+                <h2 class="home-sub-title"
+                    [ngsReveal]="{reset: false, origin: 'left', distance: '30px', duration: 1700, delay: 1400}">Video
+                    Game Design.</h2>
                 <!-- <p class="home_info">Web Developer. Game Developer. Virtual Reality.</p> -->
             </div>
 
 
-            <div class="home-small" [ngsReveal]="{reset: false, origin: 'bottom', distance: '30px', duration: 1500, delay: 1000}" >
+            <div class="home-small"
+                [ngsReveal]="{reset: false, origin: 'bottom', distance: '30px', duration: 1500, delay: 1000}">
                 <p class="home-small-text">// scroll</p>
             </div>
 
@@ -68,9 +83,10 @@
 
                     <div class="col-sm">
 
-                        <div class="heading-container" [@DevFadeInLeft]="fadeInLeft ? 'in' : 'in'">
+                        <div class="heading-container" [@DevFadeInLeft]="triggerAboutText ? 'in' : 'out'">
                             <p class="title-text">/ DEVELOPMENT</p>
-                            <h3 class="title-sub-text">Experiance with modern web <br> application architectures <br> and video game technologies.</h3>
+                            <h3 class="title-sub-text">Experiance with modern web <br> application architectures <br>
+                                and video game technologies.</h3>
                         </div>
 
                     </div>
@@ -100,34 +116,38 @@
         <div class="container-fluid">
 
             <div class="carousel-container">
-                <owl-carousel-o [options]="customOptions" [ngsReveal]="{reset: false, origin: 'right', distance: '200px', duration: 1200, delay: 500}">
+                <owl-carousel-o [options]="customOptions"
+                    [ngsReveal]="{reset: false, origin: 'right', distance: '200px', duration: 1200, delay: 500}">
 
-                    <ng-template class="item first" carouselSlide >
+                    <ng-template class="item first" carouselSlide>
                         <div class="carousel-inner first-item">
                             <img src="../../assets/img/gameimg.png" class="carousel-image">
                             <div class="">
                                 <p class="title-text">// JUSTWANNADANCE</p>
-                                <h3 class="game-sub-text">Retro style shooter developed with Unity. Fight off hordes of zombies in this playstation era inspired grunge FPS. <br>
+                                <h3 class="game-sub-text">Retro style shooter developed with Unity. Fight off hordes of
+                                    zombies in this playstation era inspired grunge FPS. <br>
                                 </h3>
                             </div>
                         </div>
                     </ng-template>
                     <ng-template class="item" carouselSlide>
                         <div class="carousel-inner">
-                            <img src="../../assets/img/gameimg.png" class="carousel-image" >
+                            <img src="../../assets/img/gameimg.png" class="carousel-image">
                             <div class="">
                                 <p class="title-text">// JUSTWANNADANCE</p>
-                                <h3 class="game-sub-text">Retro style shooter developed with Unity. Fight off hordes of zombies in this playstation era inspired grunge FPS. <br>
+                                <h3 class="game-sub-text">Retro style shooter developed with Unity. Fight off hordes of
+                                    zombies in this playstation era inspired grunge FPS. <br>
                                 </h3>
                             </div>
                         </div>
                     </ng-template>
                     <ng-template class="item" carouselSlide>
                         <div class="carousel-inner">
-                            <img src="../../assets/img/gameimg.png" class="carousel-image" >
+                            <img src="../../assets/img/gameimg.png" class="carousel-image">
                             <div class="">
                                 <p class="title-text">// JUSTWANNADANCE</p>
-                                <h3 class="game-sub-text">Retro style shooter developed with Unity. Fight off hordes of zombies in this playstation era inspired grunge FPS. <br>
+                                <h3 class="game-sub-text">Retro style shooter developed with Unity. Fight off hordes of
+                                    zombies in this playstation era inspired grunge FPS. <br>
                                 </h3>
                             </div>
                         </div>
@@ -147,8 +167,8 @@
                         <img [src]="slide.url" [alt]="slide.id" [title]="slide.id">
                       </ng-template>
                     </ng-container> -->
-                
-                  </owl-carousel-o> 
+
+                </owl-carousel-o>
             </div>
         </div>
 
@@ -161,9 +181,12 @@
                 <div class="row">
                     <div class="image-content-container">
                         <div class="image-content-left" [@fadeInLeft]="fadeInLeft ? 'in' : 'in'">
-                            <h3 class="title-sub-text image-text">Experiance with modern web <br> application architectures <br> and video game technologies.</h3>
+                            <h3 class="title-sub-text image-text">Experiance with modern web <br> application
+                                architectures <br> and video game technologies.</h3>
                             <div class="link-image-container">
-                                <a href=""><h4 class="download-text image-text">Download On Steam</h4></a>
+                                <a href="">
+                                    <h4 class="download-text image-text">Download On Steam</h4>
+                                </a>
                                 <img src="../../../assets/img/steamicon.png" class="steam-icon">
                             </div>
                         </div>
@@ -181,23 +204,21 @@
     <section class="about-second section-p white">
         <div class="about-container-second">
 
-                    <div class="inner-about-second">
-                        <div class="social-links" #icons>
-                        
-                            <a href=""><img src="../../../assets/img/icons/github-logo.png" class="social-icon" [@iconBtmOne]="isOpen ? 'in' : 'in'" ></a>
-                            <a href=""><img src="../../../assets/img/icons/twitch.png" class="social-icon" [@iconBtmTwo]="isOpen ? 'in' : 'in'" ></a>
-                            <a href=""><img src="../../../assets/img/icons/instagram.png" class="social-icon" [@iconBtmThree]="isOpen ? 'in' : 'in'" ></a>
-                            <a href=""><img src="../../../assets/img/icons/twitter.png" class="social-icon" [@iconBtmFour]="isOpen ? 'in' : 'in'"></a>
-                            <a href=""><img src="../../../assets/img/icons/youtube.png" class="social-icon" [@iconBtmFive]="isOpen ? 'in' : 'in'"></a>
+            <div class="inner-about-second">
+                <div class="social-links">
 
-<!-- 
-                            <a href=""><img src="../../../assets/img/icons/github-logo.png" class="social-icon" [ngsReveal]="{reset: false, origin: 'bottom', distance: '100px', duration: 1400, delay: 300}"></a>
-                            <a href=""><img src="../../../assets/img/icons/twitch.png" class="social-icon" [ngsReveal]="{reset: false, origin: 'bottom',  distance: '100px', duration: 1400, delay: 400}"></a>
-                            <a href=""><img src="../../../assets/img/icons/instagram.png" class="social-icon" [ngsReveal]="{reset: false, origin: 'bottom',  distance: '100px', duration: 1400, delay: 500}"></a>
-                            <a href=""><img src="../../../assets/img/icons/twitter.png" class="social-icon" [ngsReveal]="{reset: false, origin: 'bottom',  distance: '100px', duration: 1400, delay: 600}"></a>
-                            <a href=""><img src="../../../assets/img/icons/youtube.png" class="social-icon" [ngsReveal]="{reset: false, origin: 'bottom',  distance: '100px', duration: 1400, delay: 600}"></a> -->
-                        </div>
-                    </div>
+                    <a href=""><img src="../../../assets/img/icons/github-logo.png" class="social-icon"
+                            [@iconBtmOne]="triggerIcons ? 'in' : 'out'"></a>
+                    <a href=""><img src="../../../assets/img/icons/twitch.png" class="social-icon"
+                            [@iconBtmTwo]="triggerIcons ? 'in' : 'out'"></a>
+                    <a href=""><img src="../../../assets/img/icons/instagram.png" class="social-icon"
+                            [@iconBtmThree]="triggerIcons ? 'in' : 'out'"></a>
+                    <a href=""><img src="../../../assets/img/icons/twitter.png" class="social-icon"
+                            [@iconBtmFour]="triggerIcons ? 'in' : 'out'"></a>
+                    <a href=""><img src="../../../assets/img/icons/youtube.png" class="social-icon"
+                            [@iconBtmFive]="triggerIcons ? 'in' : 'out'"></a>
+                </div>
+            </div>
 
         </div>
     </section>
@@ -210,7 +231,7 @@
                 <div id="box"></div>
             </div>
         </footer>
-        
+
     </section>
 
 

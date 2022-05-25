@@ -35,6 +35,10 @@ export class HomeComponent implements OnInit {
   isOpen = true;
   fadeInLeft = true;
 
+  // animations triggers
+  triggerAboutText!: boolean;
+  triggerIcons!: boolean;
+
   customOptions: OwlOptions = {
     loop:false,
     mouseDrag: true,
@@ -85,9 +89,16 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // track page Y offset value for trigger scroll animations
   @HostListener("window:scroll", ["$event"])
   onWindowScroll(){
-    console.log("tracking mouse position", window.pageYOffset );
+    let value = window.pageYOffset;
+    console.log(window.pageYOffset);
+    if(value > 200) this.triggerAboutText = true;
+    if(value > 2300){
+      console.log("TRIGGERING ICONS");
+      this.triggerIcons = true;
+    }
     
   }
 
