@@ -1,0 +1,1 @@
+var element=document.getElementById("box"),elementHeight=element.clientHeight;function inView(){var e=window.innerHeight,n=window.scrollY||window.pageYOffset;return n+e>element.getBoundingClientRect().top+n+elementHeight}function animate(){inView()&&element.classList.add("animate")}console.log("BIG CHUNGUS"),document.addEventListener("scroll",animate);
